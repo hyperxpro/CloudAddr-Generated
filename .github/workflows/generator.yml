@@ -27,3 +27,9 @@ jobs:
 
     - name: Build and Run CloudAddr Generator
       run: cd CloudAddr && chmod +x ./mvnw && ./mvnw clean install && ./mvnw exec:java -Dexec.mainClass="com.aayushatharva.cloudaddr.generator.Main" -pl generator -ntp -B
+
+    - name: Copy Generated Data Folder
+      run: cp -r CloudAddr/data .
+
+    - name: LS
+      run: ls
