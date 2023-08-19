@@ -26,6 +26,4 @@ jobs:
         architecture: x64
 
     - name: Build and Run CloudAddr Generator
-      run: |
-        cd CloudAddr/
-        ../mvnw clean package exec:java -Dexec.mainClass="com.aayushatharva.cloudaddr.generator.Main" -pl cloudaddr-generator
+      run: cd CloudAddr && ./mvnw clean package exec:java -Dexec.mainClass="com.aayushatharva.cloudaddr.generator.Main" -pl cloudaddr-generator
