@@ -1,0 +1,31 @@
+name: Clone and Build CloudAddr
+
+on:
+  push:
+
+jobs:
+  clone-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Clone CloudAddr
+      uses: actions/checkout@v3
+      with:
+        repository: hyperxpro/CloudAddr
+        ref: main
+        path: CloudAddr/
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'corretto'
+        java-version: 17
+        architecture: x64
+
+    - name: Build and Run CloudAddr Generator
+      run: |
+        cd CloudAddr/
+        ../mvnw clean package exec:java -Dexec.mainClass="com.aayushatharva.cloudaddr.generator.Main" -pl cloudaddr-generator
