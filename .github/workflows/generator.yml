@@ -3,10 +3,13 @@ name: Clone and Build CloudAddr
 on:
   push:
 
+  schedule:
+    - cron: '0 12 * * *'
+
 jobs:
-  clone-and-build:
+  UpdateGeneratedData:
+  
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
