@@ -38,7 +38,7 @@ jobs:
 
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      run: echo "::set-output name=date::$(date + '%Y-%m-%d %H:%M:%S')"
 
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.0.0
