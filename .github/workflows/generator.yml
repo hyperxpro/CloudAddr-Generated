@@ -38,7 +38,11 @@ jobs:
 
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date + '%Y-%m-%d %H:%M:%S')"
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
+
+    - name: Show Date Output
+      run: | 
+         echo "Date: ${{ steps.date.outputs.date }}"
 
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.0.0
