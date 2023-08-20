@@ -36,9 +36,13 @@ jobs:
     - name: Copy Generated Data Folder
       run: cp -r CloudAddr/data .
 
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.0.0
       with:
         default_author: github_actions
-        message: 'Update Database'
+        message: "Update Database - ${{{ steps.date.outputs.date }}}"
         add: 'data'
