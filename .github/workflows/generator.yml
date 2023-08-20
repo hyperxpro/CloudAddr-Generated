@@ -40,13 +40,15 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
 
-    - name: Show Date Output
-      run: | 
-         echo "Date: ${{ steps.date.outputs.date }}"
-
+    - name: Get current date and time
+      id: datetime
+      run: |
+        echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        echo "::set-output name=time::$(date +'%H:%M:%S')"
+        
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.0.0
       with:
         default_author: github_actions
-        message: "Update Database - ${{ steps.date.outputs.date }}"
+        message: "Update Database - ${{ steps.datetime.outputs.date }} ${{ steps.datetime.outputs.time }} (#${{ github.run_number }})"
         add: 'data'
