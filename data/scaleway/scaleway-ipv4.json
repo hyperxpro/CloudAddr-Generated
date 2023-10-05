@@ -1,6 +1,6 @@
 {
   "cloudProvider": "Scaleway",
-  "creationDate": 1696421620933,
+  "creationDate": 1696508006924,
   "prefixes": [
     "62.4.0.0/19",
     "212.47.224.0/19",
