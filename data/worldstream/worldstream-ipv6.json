@@ -1,7 +1,9 @@
 {
   "cloudProvider": "Worldstream",
-  "creationDate": 1698754378793,
+  "creationDate": 1698840777149,
   "prefixes": [
+    "2a05:dfc7:2253::/48",
+    "2a06:f940::/48",
     "2a03:69c0:100::/40",
     "2a09:3a00:3000::/40",
     "2602:ff1b::/36",
