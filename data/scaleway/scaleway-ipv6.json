@@ -1,6 +1,6 @@
 {
   "cloudProvider": "Scaleway",
-  "creationDate": 1741868331296,
+  "creationDate": 1741954675499,
   "prefixes": [
     "2001:bc8::/32"
   ]
