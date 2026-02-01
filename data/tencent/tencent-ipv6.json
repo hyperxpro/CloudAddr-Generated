@@ -1,8 +1,7 @@
 {
   "cloudProvider": "Tencent",
-  "creationDate": 1769862254700,
+  "creationDate": 1769948774812,
   "prefixes": [
-    "240d:c010:14::/48",
     "240d:c010:16::/48",
     "240d:c010:68::/48",
     "240d:c010:6f::/48",
